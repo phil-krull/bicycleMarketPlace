@@ -7,6 +7,7 @@ const session = require('express-session');
 const app = express();
 
 app.use(express.static(path.join(__dirname, './public/dist')));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(session({secret: 'mySuperSecretKey'}));
 
